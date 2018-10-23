@@ -32,7 +32,7 @@ script:
 
 
 after_success:
-  - bash decktape.sh xaringan 2000  ## Arg 1 file name, Arg 2 milliseconds between prints
+  - bash decktape.sh 5000       ## Arg 1 milliseconds before prints. Print the file listed in the 1st line of list.txt
   #- node_modules/.bin/decktape --pause=2000 --size=1024x768 --chrome-arg=--allow-file-access-from-files remark xaringan/index.html xaringan/xaringan.pdf # Print slide to PDF
 #  - node_modules/.bin/decktape --pause=500 --size=1024x768 pttR-intro/index.html pttR-intro/pttR-intro.pdf
 #  - google-chrome --headless --disable-gpu  --virtual-time-budget=1000 --print-to-pdf=$PWD/xaringan/index.pdf $PWD/xaringan/index.html 
