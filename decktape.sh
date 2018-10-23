@@ -10,21 +10,23 @@ pause=${1}
 
 
 while read p; do
+  # Loop over every file in list.txt
   file=$(echo "$p" | cut -d ',' -f 2)
-  
-  ## Check if web page available
+  # Check if web page available
   curl -L -s --head https://github.com/liao961120/slides/blob/gh-pages/${file}/${file}.pdf | head -n 1 | grep "HTTP/1.[01] [23].." > foo.txt
   exist=$(head -n 1 foo.txt)
 
-  # when empty string, i.e. file doesn't exist in github gh-pages branch
+  # When empty string, i.e. file doesn't exist in github gh-pages branch
   if [ -z ${exist} ]; then
-    # Print slide to PDF
-    node_modules/.bin/decktape --pause=$pause --size=1024x768 --chrome-arg=--allow-file-access-from-files remark ${file}/index.html ${file}/${file}.pdf   
-  # when file exist
+    ## Print slide to PDF
+    node_modules/.bin/decktape --pause=$pause --size=1024x768 --chrome-arg=--allow-file-access-from-files remark ${file}/index.html ${file}/${file}.pdf
+  
+  # When file exist
   else
-    # Dowload pdf from liao961120.github.io into folder
+    ## Dowload index.html & pdf from liao961120.github.io into file/
     bash dwnpdf.sh $file
   fi
   
 done < list.txt
 
+rm foo.txt

@@ -29,7 +29,7 @@ before_install:
 script:
   - Rscript -e 'devtools::install_github("yihui/xaringan")'
   - Rscript -e 'rmarkdown::render("xaringan/index.Rmd")'    # render slide
-  - bash decktape.sh 5000       ## Arg 1 milliseconds before prints. Print/download the files listed in the list.txt
+  - bash decktape.sh 5000       ## Print/download the files listed in the list.txt; Arg 1 milliseconds before prints
 
 #after_success:
   #- node_modules/.bin/decktape --pause=2000 --size=1024x768 --chrome-arg=--allow-file-access-from-files remark xaringan/index.html xaringan/xaringan.pdf # Print slide to PDF
