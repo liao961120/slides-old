@@ -25,4 +25,4 @@ I also set up [decktape](https://github.com/astefanutti/decktape) to print HTML 
 ### Later
 
 1. Update xaringan slides in Rmd
-1. Push it to GitHub
+1. Push changes to GitHub
