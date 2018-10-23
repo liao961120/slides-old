@@ -19,10 +19,10 @@ I also set up [decktape](https://github.com/astefanutti/decktape) to print HTML 
 
 1. Write xaringan slides in Rmd
 1. knit it (only the first time is needed, so dependencies can be generated)
-1. Add new entry in `list.txt`
+1. Add new entries in `list.txt`
 1. Push to GitHub
 
-### Later Times
+### Later
 
 1. Update xaringan slides in Rmd
 1. Push it to GitHub
