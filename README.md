@@ -8,9 +8,9 @@ By setting up Travis-CI, I only have to update the source Rmd file and push the 
 
 I also set up [decktape](https://github.com/astefanutti/decktape) to print HTML slides to PDF after they are built. Have a look at
 
-    - [.travis.yml](https://github.com/liao961120/slides/blob/master/.travis.yml)
-    - [after_knit.sh](https://github.com/liao961120/slides/blob/master/after_knit.sh)
-    - [list.txt](https://github.com/liao961120/slides/blob/master/list.txt)
-    - [dwnpdf.sh](https://github.com/liao961120/slides/blob/master/dwnpdf.sh): bash script to download deployed PDF
+- [.travis.yml](https://github.com/liao961120/slides/blob/master/.travis.yml)
+- [after_knit.sh](https://github.com/liao961120/slides/blob/master/after_knit.sh)
+- [list.txt](https://github.com/liao961120/slides/blob/master/list.txt)
+- [dwnpdf.sh](https://github.com/liao961120/slides/blob/master/dwnpdf.sh): bash script to download deployed PDF
 
  to see how this is achieved.
