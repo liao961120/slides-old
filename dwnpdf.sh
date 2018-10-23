@@ -1,6 +1,7 @@
 #!/bin/bash
 
-read -p "Enter file name (without .pdf) > " file
+#read -p "Enter file name (without .pdf) > " 
+file=${1}
 
 [ -d ${file} ] || echo "Dir ${file} doesn't exist!"
 
