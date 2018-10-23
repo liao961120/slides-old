@@ -12,3 +12,17 @@ I also set up [decktape](https://github.com/astefanutti/decktape) to print HTML 
 - [list.txt](https://github.com/liao961120/slides/blob/master/list.txt): Slide directory names and date
 - [build-slide.sh](https://github.com/liao961120/slides/blob/master/build-slide.txt): Build and print new slide; download previous rendered slides
 - [after_knit.sh](https://github.com/liao961120/slides/blob/master/after_knit.sh): Write [web page](https://liao961120.github.io/slides) to link to slides
+
+## Steps to Update Slides
+
+### The First Time
+
+1. Write xaringan slides in Rmd
+1. knit it (only the first time is needed, so dependencies can be generated)
+1. Add new entry in `list.txt`
+1. Push to GitHub
+
+### Later Times
+
+1. Update xaringan slides in Rmd
+1. Push it to GitHub
