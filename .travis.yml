@@ -29,13 +29,13 @@ before_install:
 script:
   - Rscript -e 'devtools::install_github("yihui/xaringan")'
   - Rscript -e 'rmarkdown::render("xaringan/index.Rmd")'    # render slide
-  - node_modules/.bin/decktape --pause=2000 --size=1024x768 --chrome-arg=--allow-file-access-from-files remark xaringan/index.html xaringan/xaringan.pdf # Print slide to PDF
-  - node_modules/.bin/decktape --pause=500 --size=1024x768 pttR-intro/index.html pttR-intro/pttR-intro.pdf
 
 
-#after_success:
+after_success:
+  - bash decktape.sh xaringan 2000  ## Arg 1 file name, Arg 2 milliseconds between prints
+  #- node_modules/.bin/decktape --pause=2000 --size=1024x768 --chrome-arg=--allow-file-access-from-files remark xaringan/index.html xaringan/xaringan.pdf # Print slide to PDF
+#  - node_modules/.bin/decktape --pause=500 --size=1024x768 pttR-intro/index.html pttR-intro/pttR-intro.pdf
 #  - google-chrome --headless --disable-gpu  --virtual-time-budget=1000 --print-to-pdf=$PWD/xaringan/index.pdf $PWD/xaringan/index.html 
-#  - Rscript -e 'webshot::webshot(paste0("file://", normalizePath("pttR-intro/index.html")), "pttR-intro/index.pdf")'
 
 before_deploy:
   - rm -r node_modules
