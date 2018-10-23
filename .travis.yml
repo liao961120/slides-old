@@ -30,7 +30,7 @@ script:
   - Rscript -e 'devtools::install_github("yihui/xaringan")'
   - Rscript -e 'rmarkdown::render("xaringan/index.Rmd")'    # render slide
   - node_modules/.bin/decktape --pause=2000 --size=1024x768 --chrome-arg=--allow-file-access-from-files remark xaringan/index.html xaringan/xaringan.pdf # Print slide to PDF
-  - node_modules/.bin/decktape --pause=500 --size=1024x768 pttR-intro/index.html pttR-intro/pttR-intro.pdf
+#  - node_modules/.bin/decktape --pause=500 --size=1024x768 pttR-intro/index.html pttR-intro/pttR-intro.pdf
 
 
 #after_success:
