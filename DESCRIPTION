@@ -1,0 +1,16 @@
+Package: placeholder
+Type: Website
+Title: For travis ci
+Version: 0.0.1
+Imports:
+    htmltools,
+    knitr (>= 1.16),
+    servr (>= 0.5),
+    xfun (>= 0.2),
+    rmarkdown,
+    ggplot2,
+    tidyverse,
+    devtools,
+    leaflet,
+    DT,
+    webshot

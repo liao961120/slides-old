@@ -1,0 +1,127 @@
+.article {
+    font-family: -apple-system, BlinkMacSystemFont, "Roboto", 'Helvetica Neue', 'Arial', "文泉驛正黑", "WenQuanYi Zen Hei", "蘋方-繁", "PingFang TC", 'PingFang SC', "儷黑 Pro", "LiHei Pro", "Noto Sans CJK", "思源黑體", "微軟正黑體", "Microsoft JhengHei", 'Microsoft YaHei', SimSun, sans-serif;
+}
+
+body h1,
+h2,
+h3,
+ul,
+ol,
+li {
+    color: #000000;
+}
+
+.code {
+    font-family: Menlo, Consolas, "Courier New", Courier, "Liberation Mono", monospace;
+}
+
+
+/* footer icon size */
+
+slides>slide:not(.nobackground):before {
+    /* width: 1.5em;
+    height: 1.6em;
+    background-size: 1.6em 1.6em; */
+    padding-bottom: 0.45em
+}
+
+.success {
+    padding-top: 0.65em;
+    padding-bottom: 0em;
+    padding-left: 0.6em;
+    margin-bottom: 0.6em;
+    border-radius: 0.6em;
+    background-color: rgba(0, 255, 0, 0.1);
+    /* 10% opacity */
+    border: 1px solid rgba(0, 255, 0, 1);
+}
+
+.info {
+    /* padding: 0.6em; */
+    padding-top: 0.65em;
+    padding-bottom: 0em;
+    padding-left: 0.6em;
+    margin-bottom: 0.6em;
+    border-radius: 0.6em;
+    background-color: rgba(77, 184, 255, 0.1);
+    border: 1px solid rgba(77, 184, 255, 1);
+}
+
+.warning {
+    padding-top: 0.65em;
+    padding-bottom: 0em;
+    padding-left: 0.6em;
+    margin-bottom: 0.6em;
+    border-radius: 0.6em;
+    background-color: rgba(255, 173, 51, 0.1);
+    border: 1px solid rgba(255, 173, 51, 1);
+    ;
+}
+
+.error {
+    padding-top: 0.65em;
+    padding-bottom: 0em;
+    padding-left: 0.6em;
+    margin-bottom: 0.6em;
+    border-radius: 0.6em;
+    background-color: rgba(255, 0, 0, 0.1);
+    border: 1px solid rgba(255, 0, 0, 1);
+}
+
+
+/* image shapes */
+
+.rounded>img {
+    border-radius: 15px;
+    box-shadow: 5px 10px;
+    margin-bottom: 1em;
+}
+
+.circle>img {
+    border-radius: 50%;
+}
+
+/* Bootstrap callouts */
+/* Base styles (regardless of theme) */
+.bs-callout {
+  margin: 20px 0;
+  padding: 15px 30px 15px 15px;
+  border-left: 5px solid #eee;
+}
+.bs-callout h4 {
+  margin-top: 0;
+}
+.bs-callout p:last-child {
+  margin-bottom: 0;
+}
+.bs-callout code,
+.bs-callout .highlight {
+  background-color: #fff;
+}
+
+/* Themes for different contexts */
+.bs-callout-danger {
+  background-color: #fcf2f2;
+  border-color: #dFb5b4;
+}
+.bs-callout-warning {
+  background-color: #fefbed;
+  border-color: #f1e7bc;
+}
+.bs-callout-info {
+  background-color: #f0f7fd;
+  border-color: #d0e3f0;
+}
+
+/*  custom color class, for []{.color}*/
+
+.gray {
+    color: gray;
+}
+
+
+.title-slide hgroup h1 {
+    font-size: 60px;
+    line-height: 1.1;
+}
+

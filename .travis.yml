@@ -1,0 +1,53 @@
+# R for travis: see documentation at https://docs.travis-ci.com/user/languages/r
+language: R
+sudo: required
+cache: 
+  packages: yes
+  directories:
+    - $TRAVIS_BUILD_DIR/img
+dist: trusty
+pandoc_version: 1.19.2.1
+
+
+before_install:
+  - sudo apt-get update
+  - curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.11/install.sh | bash  # Update nvm
+  - source ~/.nvm/nvm.sh             # Update nvm
+  - nvm install 8.12.0               # Install node (nodejs)
+  - node --version                   # Check node version
+  - npm config set strict-ssl false  # Setup decktape
+  - npm install -g node-gyp          # Setup decktape
+  - npm install https://github.com/astefanutti/decktape#v2.9.0 #decktape             # Setup decktape
+  - sudo apt-get install language-pack-zh*                          # install Chinese lang support
+  - sudo apt-get install chinese*                                   # install Chinese lang support
+  - sudo mkdir /usr/share/fonts/truetype/noto                       # install Chinese font NotoSansCJK TC
+  - sudo cp ./NotoSansCJKtc.otf /usr/share/fonts/truetype/noto      # install Chinese font NotoSansCJK TC
+  - sudo chmod 755 /usr/share/fonts/truetype/noto/NotoSansCJKtc.otf # install Chinese font NotoSansCJK TC
+  - fc-cache                                                        # install Chinese font NotoSansCJK TC
+
+
+script:
+  - Rscript -e 'devtools::install_github("yihui/xaringan")'
+  - Rscript -e 'rmarkdown::render("xaringan/index.Rmd")'    # render slide
+  - node_modules/.bin/decktape --pause=2000 --size=1024x768 --chrome-arg=--allow-file-access-from-files remark xaringan/index.html xaringan/xaringan.pdf # Print slide to PDF
+  - node_modules/.bin/decktape --pause=500 --size=1024x768 pttR-intro/index.html pttR-intro/pttR-intro.pdf
+
+
+#after_success:
+#  - google-chrome --headless --disable-gpu  --virtual-time-budget=1000 --print-to-pdf=$PWD/xaringan/index.pdf $PWD/xaringan/index.html 
+#  - Rscript -e 'webshot::webshot(paste0("file://", normalizePath("pttR-intro/index.html")), "pttR-intro/index.pdf")'
+
+before_deploy:
+  - rm -r node_modules
+  - bash after_knit.sh
+
+
+deploy:
+  - provider: pages    # Deploy master to branch win-build
+    skip-cleanup: true
+    github-token: $GH_TOKEN  # Set in travis-ci.org dashboard
+    keep-history: true
+    local-dir: docs
+    on:
+      branch: master
+
