@@ -29,6 +29,7 @@ while read p; do
     ## Dowload index.html from liao961120.github.io into file/index.html
     curl -L https://raw.githubusercontent.com/liao961120/slides/gh-pages/${file}/index.html -o ${file}/index.html
     echo "Copied ${file}/index.html from rawgithub branch gh-pages"
+    
   fi
   
 done < list.txt
