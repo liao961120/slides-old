@@ -13,7 +13,7 @@ while read p; do
 
 
   ### When empty string, i.e. file doesn't exist in github gh-pages branch ##############
-  if [ -z ${exist} ]; then
+  if [[ -z ${exist} ]]; then
     ## Render slide
     Rscript -e "rmarkdown::render(\"${file}/index.Rmd\")"
     
