@@ -35,3 +35,10 @@ while read p; do
 done < list.txt
 
 rm foo.txt
+
+
+
+# Always build the newest slide (first entry in list.txt
+file=$(head -n 1 list.txt | cut -d ',' -f 2)
+Rscript -e "rmarkdown::render(\"${file}/index.Rmd\")"
+node_modules/.bin/decktape --pause=$pause --size=1024x768 --chrome-arg=--allow-file-access-from-files remark ${file}/index.html ${file}/${file}.pdf
