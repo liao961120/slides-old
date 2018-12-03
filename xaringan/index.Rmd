@@ -552,6 +552,16 @@ Some text ![:scale 70px](../img/emo/bye.png)
 
 ---
 
+## MathJax
+
+```latex
+\color{blue}{ \frac{a}{\color{red} b} \sqrt{\color{black} x} }
+```
+
+$\color{blue} {\frac{a}{\color{red} b} \sqrt{\color{black} x}}$
+
+---
+
 ## Thanks For Reading
 
 [GitHub Source](https://github.com/liao961120/slides/tree/master/xaringan)
