@@ -40,6 +40,10 @@ rm foo.txt
 
 
 
+
+url=$(head -n 1 list.txt | cut -d ',' -f 3)
+[[ ${url} != 'local ']] && exit 0
+
 # Always build the newest slide (first entry in list.txt
 file=$(head -n 1 list.txt | cut -d ',' -f 2)
 Rscript -e "rmarkdown::render(\"${file}/index.Rmd\")"
