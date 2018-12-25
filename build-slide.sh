@@ -5,7 +5,7 @@ pause=${1}
 # Loop over every file in list.txt
 while read p; do
   url=$(echo "$p" | cut -d ',' -f 3)
-  [[ ${url} == 'local ']] && continue
+  [[ ${url} != 'local ']] && continue
   
   file=$(echo "$p" | cut -d ',' -f 2)
 
