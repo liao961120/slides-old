@@ -30,7 +30,13 @@ _EOF_
 while read p; do
   date=$(echo "$p" | cut -d ',' -f 1)
   file=$(echo "$p" | cut -d ',' -f 2)
-  printf "$date &nbsp;&nbsp; [$file](${file}){:target='_blank'} ([PDF](${file}/${file}.pdf){:target='_blank'})\n\n" >> docs/index.md
+  url=$(echo "$p" | cut -d ',' -f 3)
+  
+  if [[ ${url} == 'local' ]]; then
+    printf "$date &nbsp;&nbsp; [$file](${file}){:target='_blank'} ([PDF](${file}/${file}.pdf){:target='_blank'})\n\n" >> docs/index.md
+  else
+    printf "$date &nbsp;&nbsp; [$file](${url}){:target='_blank'}\n\n" >> docs/index.md
+  fi
 done < list.txt
 
 
