@@ -8,6 +8,8 @@ cache:
 dist: trusty
 pandoc_version: 1.19.2.1
 
+services:
+  - docker
 
 before_install:
   - sudo apt-get update
