@@ -9,6 +9,13 @@ for i in $file_list; do
     cp -r $i docs
 done
 
+# Create Slide Archive
+[[ -d archive ]] || mkdir archive
+cp -r docs/* archive
+rm -r archive/img
+tar -zcvf archive.tar.gz archive && rm -r archive
+mv archive.tar.gz docs/
+#tar -xvzf archive.tar.gz
 
 # Create index.md from list of directories
 touch docs/index.md
