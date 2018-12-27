@@ -34,7 +34,7 @@ file=$(head -n 1 list.txt | cut -d ',' -f 2)
 Rscript -e "rmarkdown::render(\"${file}/index.Rmd\")"
 
 echo 'decktape: start printing PDF'
-docker run --rm -t --net=host -v `pwd`:/slides astefanutti/decktape --pause=$pause \
+docker run --rm -t --net=host -v `pwd`:/slides astefanutti/decktape:2.8 --pause=$pause \
     remark \
     http://localhost:8000/${file}/ ${file}/index.pdf
 #node_modules/.bin/decktape --pause=$pause --size=1024x768 \
