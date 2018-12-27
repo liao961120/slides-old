@@ -18,8 +18,8 @@ mv archive.tar.gz docs/
 #tar -xvzf archive.tar.gz
 
 # Clean up
-[[ -d archive ]] && rm -r archive/
-[[ -d docs/archive ]] && rm -r archive
+[[ -d archive ]] && rm -r archive
+[[ -d docs/archive ]] && rm -r docs/archive
 
 
 # Create index.md from list of directories
@@ -34,11 +34,7 @@ cat >> docs/index.md  << _EOF_
 
 _EOF_
 
-# Auto generate slide links
-#for i in $file_list; do
-#    printf "[$i](${i}/index.html)\n\n" >> docs/index.md
-#done
-
+# Write slide links
 while read p; do
   date=$(echo "$p" | cut -d ',' -f 1)
   file=$(echo "$p" | cut -d ',' -f 2)
