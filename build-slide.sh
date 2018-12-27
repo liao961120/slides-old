@@ -3,7 +3,7 @@
 pause=${1}
 
 # Download archive.tar.gz
-#wget https://github.com/liao961120/slides/blob/gh-pages/archive.tar.gz
+#wget https://raw.githubusercontent.com/liao961120/slides/gh-pages/archive.tar.gz
 #tar -xvzf archive.tar.gz
 
 # Loop over every file in list.txt
@@ -24,7 +24,7 @@ while read p; do
   #exist=$(head -n 1 foo.txt)
 
 
-  ### When empty string, i.e. file doesn't exist in github gh-pages branch ##############
+  ### When empty string, i.e. file doesn't exist in archive ##############
   if [[ -z ${exist} ]]; then
     ## Render slide
     Rscript -e "rmarkdown::render(\"${file}/index.Rmd\")"
