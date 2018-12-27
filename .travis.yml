@@ -14,7 +14,6 @@ before_install:
   - curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.11/install.sh | bash  # Update nvm
   - source ~/.nvm/nvm.sh             # Update nvm
   - nvm install 8.12.0               # Install node (nodejs)
-  - node --version                   # Check node version
   - npm config set strict-ssl false  # Setup decktape
   - npm install -g node-gyp          # Setup decktape
   - npm install https://github.com/astefanutti/decktape#v2.9.0 #decktape             # Setup decktape
@@ -27,8 +26,7 @@ before_install:
 
 
 script:
-  - Rscript -e 'devtools::install_github("yihui/xaringan")'
-  - bash build-slide.sh 5000       ## Build/Print/download the files listed in the list.txt; Arg 1 milliseconds before prints
+  - bash build-slide.sh 5000   # Build/Print/download the files listed in the list.txt; Arg 1 milliseconds before prints
 
 #after_success:
   #- node_modules/.bin/decktape --pause=2000 --size=1024x768 --chrome-arg=--allow-file-access-from-files remark xaringan/index.html xaringan/xaringan.pdf # Print slide to PDF

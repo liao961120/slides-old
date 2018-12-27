@@ -13,4 +13,4 @@ Imports:
     devtools,
     leaflet,
     DT,
-    webshot
+    xaringan
