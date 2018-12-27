@@ -1,0 +1,712 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Xaringan Xaringan Xaringan</title>
+    <meta charset="utf-8">
+    <meta name="author" content="Yongfu Liao" />
+    <meta name="date" content="2018-12-27" />
+    <link href="libs/remark-css/default.css" rel="stylesheet" />
+    <link href="libs/remark-css/chocolate.css" rel="stylesheet" />
+    <link href="libs/remark-css/chocolate-fonts.css" rel="stylesheet" />
+    <script src="libs/htmlwidgets/htmlwidgets.js"></script>
+    <script src="libs/jquery/jquery.min.js"></script>
+    <link href="libs/leaflet/leaflet.css" rel="stylesheet" />
+    <script src="libs/leaflet/leaflet.js"></script>
+    <link href="libs/leafletfix/leafletfix.css" rel="stylesheet" />
+    <script src="libs/Proj4Leaflet/proj4-compressed.js"></script>
+    <script src="libs/Proj4Leaflet/proj4leaflet.js"></script>
+    <link href="libs/rstudio_leaflet/rstudio_leaflet.css" rel="stylesheet" />
+    <script src="libs/leaflet-binding/leaflet.js"></script>
+    <link href="libs/datatables-css/datatables-crosstalk.css" rel="stylesheet" />
+    <script src="libs/datatables-binding/datatables.js"></script>
+    <link href="libs/dt-core/css/jquery.dataTables.min.css" rel="stylesheet" />
+    <link href="libs/dt-core/css/jquery.dataTables.extra.css" rel="stylesheet" />
+    <script src="libs/dt-core/js/jquery.dataTables.min.js"></script>
+    <link href="libs/crosstalk/css/crosstalk.css" rel="stylesheet" />
+    <script src="libs/crosstalk/js/crosstalk.min.js"></script>
+  </head>
+  <body>
+    <textarea id="source">
+
+
+
+
+class: title-slide
+
+.bg-text[
+# Xaringan Xaringan Xaringan
+### Chocolate Theme
+
+&lt;hr /&gt;
+
+December 27, 2018  
+Yongfu Liao
+]
+
+---
+
+# yaml
+
+
+
+
+```yaml
+---
+title: "Xaringan Xaringan Xaringan"
+subtitle: "Chocolate Theme"
+author: "Yongfu Liao"
+date: "`r format(Sys.Date(), '%B %e, %Y')`"
+output:
+  xaringan::moon_reader:
+    css: [default, chocolate, chocolate-fonts]
+    lib_dir: libs
+    nature:
+      beforeInit: "macros.js"
+      highlightStyle: github
+      highlightLines: true
+      countIncrementalSlides: false
+    yolo:
+      img: "../img/emo/boredom-small.png"
+      times: 1
+    seal: false
+---
+```
+
+See the help page `?xaringan::moon_reader` for all possible options that you can use.
+
+---
+
+# Title Page
+
+Set `seal: false` and write the title page in R Markdown:
+
+```markdown
+class: title-slide
+
+.bg-text[
+# Xaringan Xaringan Xaringan
+### Chocolate Theme
+
+&lt;hr /&gt;
+
+`r format(Sys.Date(), '%B %e, %Y')`  
+Yongfu Liao
+]
+
+---
+```
+
+--
+
+The background image is set in [`chocolate`](https://github.com/yihui/xaringan/blob/master/inst/rmarkdown/templates/xaringan/resources/chocolate.css) and can be overwritten with `background-image: url(path)` in the title page.
+
+???
+
+presenter's note presenter's note presenter's note presenter's note presenter's note presenter's note presenter's note presenter's note presenter's note 
+
+---
+
+
+class: top, right, inverse
+background-image: url(https://farm2.staticflickr.com/1223/943655732_4a8444e17b_b.jpg)
+background-color: black
+
+# Image from flickr
+
+???
+
+Presenter's note presenter's note presenter's note presenter's note presenter's note presenter's note presenter's note presenter's note presenter's note Presenter's note presenter's note presenter's note presenter's note presenter's note presenter's note presenter's note presenter's note presenter's note
+
+```
+class: bottom, right, inverse
+```
+
+---
+
+class: inverse, center, middle, title-slide
+
+# Get Started
+
+---
+
+## Incremental portion
+
+- Incremental portions is seperated by `--`
+
+--
+
+- Footnotes
+    - `&lt;sup&gt;tag&lt;/sup&gt;`: &lt;sup&gt;1&lt;/sup&gt;
+    - `.footnote[]`
+
+
+.footnote[
+[1] 中文註腳。
+]
+
+---
+background-position: contain
+background-image: linear-gradient(to bottom, rgba(255,255,255,0.4) 0%, rgba(255,255,255,0.4) 100%), url("../img/bg/peace-sea.jpg")
+
+# Content Class
+
+
+
+--
+
+- Global class for all elements in a slide (Not affecting backgroud image)
+    - Set on top of the slide with: `class: right, inverse`
+        - Horizontal alignment: `left`, `center`, `right`
+        - Vertical alignment: `top`, `middle`, `bottom`
+        - Inverse color: `inverse`
+
+--
+
+- Background images
+    - `background-image: url("../img/pictures/road-straight.jpg")`
+    - `background-position: center`
+    - `background-size: contain`, `50% 50%`, `cover`
+
+--
+
+- Advanced Background (Backgroud with Mask)
+    - `background-image: linear-gradient(to bottom, rgba(255,255,255,0.4) 0%, rgba(255,255,255,0.4) 100%), url("../img/bg/peace-sea.jpg")`
+    - See the Next Page
+
+--
+
+&lt;br&gt;
+.right[
+.small[See [R Markdown Definite Guide](https://bookdown.org/yihui/rmarkdown/xaringan-format.html#content-classes) for datails.]
+]
+
+---
+class: bottom, inverse
+background-position: contain
+background-image: url("../img/bg/peace-sea.jpg")
+
+### Background Image without Mask
+
+---
+# Two Column Layout
+
+
+.pull-left[
+
+## R
+
+### Properties
+
+## Python
+
+]
+
+--
+
+.pull-right[
+![:class shadow](https://liao961120.github.io/linguisticsdown/man/figs/features.gif)
+]
+
+---
+
+## Sidebar Layout
+
+--
+
+.left-column[
+### Left is Small
+]
+
+.right-column[
+Some text in Left is small. Some text in Left is small. Some text in Left is small. Some text in Left is small. Some text in Left is small. Some text in Left is small. 
+]
+
+---
+
+## Sidebar Layout
+
+.left-column[
+### Left is small
+### Right is large
+]
+
+.right-column[
+
+- Incremental effect with sidebar layout  
+
+- Incremental effect by using different pages
+
+- Left column is 20%
+
+- Right column is 75%
+]
+
+---
+## Sidebar Layout
+
+.left-column[
+### Left is small
+### Right is large
+### Source code
+]
+
+.right-column[
+
+#### Code (previous page)
+```markdown
+## Sidebar Layout
+
+.left-column[
+### Left is small
+### Right is large
+]
+
+.right-column[
+
+- Incremental effect with sidebar layout  
+
+- Incremental effect by using different pages
+
+- Left column is 20%
+
+- Right column is 75%
+]
+```
+
+]
+
+
+---
+background-image: url("../img/emo/great.jpg")
+background-size: 100px
+background-position: 90% 8%
+
+# Bg Image as Icon
+
+    background-image: url("../img/emo/great.jpg")
+    background-size: 100px
+    background-position: 90% 8%
+
+
+---
+class: inverse
+
+# Shortcuts
+
+.large[
+
+- `h`: Help
+
+- `c`: Copy to new window
+
+- `p`: Presenter mode
+
+- `m`: Mirror
+
+- `f`: Full screen
+
+- `b`: Black out
+
+- `t`: Start/stop timer
+
+- `num + enter`: Nav to page `num`
+]
+
+--
+
+Hit `p` to see the presenter's notes of this page.
+
+???
+
+### Markdown Formatted Notes
+
+1. Item 1 blah
+1. yeee
+1. xaringan xaringan xaringan xaringan 
+
+---
+background-image: url(../img/emo/boredom-small.png)
+---
+
+# remark.js
+
+You can see an introduction of remark.js from [its homepage](https://remarkjs.com). You should read the [remark.js Wiki](https://github.com/gnab/remark/wiki) at least once to know how to
+
+- create a new slide (Markdown syntax&lt;sup&gt;*&lt;/sup&gt; and slide properties);
+
+- format a slide (e.g. text alignment);
+
+- configure the slideshow;
+
+- and use the presentation (keyboard shortcuts).
+
+It is important to be familiar with remark.js before you can understand the options in **xaringan**.
+
+.footnote[[*] It is different with Pandoc's Markdown! It is limited but should be enough for presentation purposes. Come on... You do not need a slide for the Table of Contents! Well, the Markdown support in remark.js [may be improved](https://github.com/gnab/remark/issues/142) in the future.]
+
+---
+background-image: url("../img/pictures/cabin.jpg")
+background-size: cover
+
+---
+
+# R Code
+
+
+```r
+# a boring regression
+fit = lm(dist ~ 1 + speed, data = cars)
+coef(summary(fit))
+```
+
+```
+#               Estimate Std. Error   t value     Pr(&gt;|t|)
+# (Intercept) -17.579095  6.7584402 -2.601058 1.231882e-02
+# speed         3.932409  0.4155128  9.463990 1.489836e-12
+```
+
+```r
+dojutsu = c('地爆天星', '天照', '加具土命', '神威', '須佐能乎', '無限月読')
+grep('天', dojutsu, value = TRUE)
+```
+
+```
+# [1] "地爆天星" "天照"
+```
+
+---
+
+# R Plots
+
+
+```r
+par(mar = c(4, 4, 1, .1))
+plot(cars, pch = 19, col = 'darkgray', las = 1)
+abline(fit, lwd = 2)
+```
+
+![](index_files/figure-html/cars-1.svg)&lt;!-- --&gt;
+
+---
+
+# Tables
+
+If you want to generate a table, make sure it is **in the HTML format**
+
+
+```r
+knitr::kable(head(iris), format = 'html')
+```
+
+&lt;table&gt;
+ &lt;thead&gt;
+  &lt;tr&gt;
+   &lt;th style="text-align:right;"&gt; Sepal.Length &lt;/th&gt;
+   &lt;th style="text-align:right;"&gt; Sepal.Width &lt;/th&gt;
+   &lt;th style="text-align:right;"&gt; Petal.Length &lt;/th&gt;
+   &lt;th style="text-align:right;"&gt; Petal.Width &lt;/th&gt;
+   &lt;th style="text-align:left;"&gt; Species &lt;/th&gt;
+  &lt;/tr&gt;
+ &lt;/thead&gt;
+&lt;tbody&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:right;"&gt; 5.1 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 3.5 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 1.4 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.2 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; setosa &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:right;"&gt; 4.9 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 3.0 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 1.4 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.2 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; setosa &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:right;"&gt; 4.7 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 3.2 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 1.3 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.2 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; setosa &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:right;"&gt; 4.6 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 3.1 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 1.5 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.2 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; setosa &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:right;"&gt; 5.0 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 3.6 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 1.4 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.2 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; setosa &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:right;"&gt; 5.4 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 3.9 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 1.7 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.4 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; setosa &lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+---
+
+
+```r
+library(leaflet)
+leaflet() %&gt;% addTiles() %&gt;% setView(121.5370, 25.0170, zoom = 15)
+```
+
+<div id="htmlwidget-7e56930be242276cc4be" style="width:100%;height:432px;" class="leaflet html-widget"></div>
+<script type="application/json" data-for="htmlwidget-7e56930be242276cc4be">{"x":{"options":{"crs":{"crsClass":"L.CRS.EPSG3857","code":null,"proj4def":null,"projectedBounds":null,"options":{}}},"calls":[{"method":"addTiles","args":["//{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",null,null,{"minZoom":0,"maxZoom":18,"tileSize":256,"subdomains":"abc","errorTileUrl":"","tms":false,"noWrap":false,"zoomOffset":0,"zoomReverse":false,"opacity":1,"zIndex":1,"detectRetina":false,"attribution":"&copy; <a href=\"http://openstreetmap.org\">OpenStreetMap<\/a> contributors, <a href=\"http://creativecommons.org/licenses/by-sa/2.0/\">CC-BY-SA<\/a>"}]}],"setView":[[25.017,121.537],15,[]]},"evals":[],"jsHooks":[]}</script>
+
+---
+
+
+```r
+DT::datatable(
+  head(iris, 10),
+  fillContainer = FALSE, options = list(pageLength = 8)
+)
+```
+
+<div id="htmlwidget-47647b86fc43cc3ffa8d" style="width:100%;height:auto;" class="datatables html-widget"></div>
+<script type="application/json" data-for="htmlwidget-47647b86fc43cc3ffa8d">{"x":{"filter":"none","fillContainer":false,"data":[["1","2","3","4","5","6","7","8","9","10"],[5.1,4.9,4.7,4.6,5,5.4,4.6,5,4.4,4.9],[3.5,3,3.2,3.1,3.6,3.9,3.4,3.4,2.9,3.1],[1.4,1.4,1.3,1.5,1.4,1.7,1.4,1.5,1.4,1.5],[0.2,0.2,0.2,0.2,0.2,0.4,0.3,0.2,0.2,0.1],["setosa","setosa","setosa","setosa","setosa","setosa","setosa","setosa","setosa","setosa"]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th> <\/th>\n      <th>Sepal.Length<\/th>\n      <th>Sepal.Width<\/th>\n      <th>Petal.Length<\/th>\n      <th>Petal.Width<\/th>\n      <th>Species<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"pageLength":8,"columnDefs":[{"className":"dt-right","targets":[1,2,3,4]},{"orderable":false,"targets":0}],"order":[],"autoWidth":false,"orderClasses":false,"lengthMenu":[8,10,25,50,100]}},"evals":[],"jsHooks":[]}</script>
+
+---
+
+# Some Tips
+
+- A countdown timer can be added to **every page of the slides** using the `countdown` option under `nature`, e.g. if you want to spend one minute on every page when you give the talk, you can set:
+
+```yaml
+output:
+  xaringan::moon_reader:
+    nature:
+      countdown: 60000
+```
+
+Then you will see a timer counting down from `01:00`, to `00:59`, `00:58`, ... When the time is out, the timer will continue but the time turns red.
+    
+---
+
+# Some Tips
+
+- There are several ways to build incremental slides. See [this presentation](https://slides.yihui.name/xaringan/incremental.html) for examples.
+
+---
+
+# Highlight Code
+
+
+.pull-left[
+An example using a leading `*`:
+
+```c
+if (a == b) {
+** a + b
+}
+```
+
+Output:
+```c
+if (a == b) {
+* a + b
+}
+```
+
+- This is used for **plain-text code chunks**.
+]
+
+.pull-right[
+An example using an ending `#&lt;&lt;`:
+
+```r
+if (TRUE) {
+  message("Important!") #&lt;&lt;
+}
+```
+
+Output:
+
+```r
+if (TRUE) {
+* message("Important!")
+}
+```
+
+- This is used for **executable code chunks**.
+]
+
+---
+
+# Macros (yaml)
+
+- remark.js [allows users to define custom macros](https://github.com/yihui/xaringan/issues/80) (JS functions) that can be applied to Markdown text using the syntax
+    - `![:macroName arg1, arg2, ...]`, or 
+    
+    - `![:macroName arg1, arg2, ...](this)`
+
+- Define macros in `macros.js` and include it in yaml with `beforeInit` under the option `nature`:
+
+    ```yaml
+    output:
+      xaringan::moon_reader:
+        nature:
+          beforeInit: "macros.js"
+    ```
+
+---
+
+# Macros (create)
+
+You can define a macro named `scale` in `macros.js`: 
+
+```js
+remark.macros.scale = function (val) {
+  var url = this;
+  return '&lt;img src="' + url + '" style="width: ' + val + '" /&gt;';
+};
+```
+
+--
+
+Then the Markdown text
+
+```markdown
+![:scale 50%](image.jpg)
+```
+
+--
+
+will be translated to
+
+```html
+&lt;img src="image.jpg" style="width: 50%" /&gt;
+```
+    
+---
+
+
+```markdown
+Some text ![:scale 70px](../img/emo/bye.png)
+```
+
+Some text ![:scale 70px](../img/emo/bye.png)
+
+--
+
+```markdown
+.center[
+![:scale 150px](../img/emo/bye.png)
+]
+```
+
+.center[![:scale 150px](../img/emo/indian.png)]
+
+---
+
+# Macros (usage)
+
+```markdown
+![:gen 90%, shadow](../img/pictures/road-red.jpg)
+```
+
+![:gen 90%, shadow](../img/pictures/road-red.jpg)
+---
+
+.pull-left[
+![:gen 150px, shadow](https://media.giphy.com/media/26Do6la9cIiHvIwMM/giphy.gif)
+
+![:gen 150px, shadow](https://media.giphy.com/media/84g6u2O3epwKA/giphy.gif)
+
+![:gen 150px, shadow](https://media.giphy.com/media/rSZdnoUEEkROM/giphy.gif)
+
+![:gen 150px, shadow](https://media.giphy.com/media/K6sJ65pUgAn8k/giphy.gif)
+
+![:gen 150px, shadow](https://media.giphy.com/media/lAR4Dpck3ntS0/giphy.gif)
+]
+
+.pull-right[
+![:gen 150px, shadow](https://media.giphy.com/media/qSNtgm0PgG6vm/giphy.gif)
+
+![:gen 150px, shadow](https://media.giphy.com/media/eAjhx94F7290s/giphy.gif)
+
+![:gen 150px, shadow](https://media.giphy.com/media/JIX9t2j0ZTN9S/giphy.gif)
+
+![:gen 150px, shadow](https://media.giphy.com/media/Jk4ZT6R0OEUoM/giphy.gif)
+]
+
+---
+
+## MathJax
+
+```latex
+\color{blue}{ \frac{a}{\color{red} b} \sqrt{\color{black} x} }
+```
+
+`\(\color{blue} {\frac{a}{\color{red} b} \sqrt{\color{black} x}}\)`
+
+---
+
+## Thanks For Reading
+
+[GitHub Source](https://github.com/liao961120/slides/tree/master/xaringan)
+
+--
+
+.middle[.center[![:scale 400px](../img/emo/bye.png)]]
+    </textarea>
+<script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
+<script src="macros.js"></script>
+<script>var slideshow = remark.create({
+"highlightStyle": "github",
+"highlightLines": true,
+"countIncrementalSlides": false
+});
+if (window.HTMLWidgets) slideshow.on('afterShowSlide', function (slide) {
+  window.dispatchEvent(new Event('resize'));
+});
+(function() {
+  var d = document, s = d.createElement("style"), r = d.querySelector(".remark-slide-scaler");
+  if (!r) return;
+  s.type = "text/css"; s.innerHTML = "@page {size: " + r.style.width + " " + r.style.height +"; }";
+  d.head.appendChild(s);
+})();</script>
+
+<script>
+(function() {
+  var i, text, code, codes = document.getElementsByTagName('code');
+  for (i = 0; i < codes.length;) {
+    code = codes[i];
+    if (code.parentNode.tagName !== 'PRE' && code.childElementCount === 0) {
+      text = code.textContent;
+      if (/^\\\((.|\s)+\\\)$/.test(text) || /^\\\[(.|\s)+\\\]$/.test(text) ||
+          /^\$\$(.|\s)+\$\$$/.test(text) ||
+          /^\\begin\{([^}]+)\}(.|\s)+\\end\{[^}]+\}$/.test(text)) {
+        code.outerHTML = code.innerHTML;  // remove <code></code>
+        continue;
+      }
+    }
+    i++;
+  }
+})();
+</script>
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+(function () {
+  var script = document.createElement('script');
+  script.type = 'text/javascript';
+  script.src  = 'https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML';
+  if (location.protocol !== 'file:' && /^https?:/.test(script.src))
+    script.src  = script.src.replace(/^https?:/, '');
+  document.getElementsByTagName('head')[0].appendChild(script);
+})();
+</script>
+  </body>
+</html>
