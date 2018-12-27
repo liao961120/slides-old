@@ -24,8 +24,9 @@ mv archive.tar.gz docs/
 # Create index.md from list of directories
 touch docs/index.md
 
+
 # index.md title
-cat >> docs/index.md  << _EOF_
+cat >> docs/index.md << _EOF_
 [![Build Status](https://travis-ci.org/liao961120/slides.svg?branch=master)](https://travis-ci.org/liao961120/slides)
 
 # List of Slides
@@ -33,17 +34,18 @@ cat >> docs/index.md  << _EOF_
 
 _EOF_
 
+
 # Write slide links
 while read p; do
-  date=$(echo "$p" | cut -d ',' -f 1)
-  file=$(echo "$p" | cut -d ',' -f 2)
-  url=$(echo "$p" | cut -d ',' -f 3)
+    date=$(echo "$p" | cut -d ',' -f 1)
+    file=$(echo "$p" | cut -d ',' -f 2)
+    url=$(echo "$p" | cut -d ',' -f 3)
   
-  if [[ ${url} == 'local' ]]; then
-    printf "$date &nbsp;&nbsp; [$file](${file}){:target='_blank'} ([PDF](${file}/${file}.pdf){:target='_blank'})\n\n" >> docs/index.md
-  else
-    printf "$date &nbsp;&nbsp; [$file](${url}){:target='_blank'}\n\n" >> docs/index.md
-  fi
+    if [[ ${url} == 'local' ]]; then
+        printf "$date &nbsp;&nbsp; [$file](${file}){:target='_blank'} ([PDF](${file}/${file}.pdf){:target='_blank'})\n\n" >> docs/index.md
+    else
+        printf "$date &nbsp;&nbsp; [$file](${url}){:target='_blank'}\n\n" >> docs/index.md
+    fi
 done < list.txt
 
 
