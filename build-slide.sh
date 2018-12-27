@@ -16,15 +16,9 @@ while read p; do
         [[ -d ${file} ]] && cp -r archive/${file}/* ${file}/
     else
         Rscript -e "rmarkdown::render(\"${file}/index.Rmd\")"
-        
-        docker run --rm -it --privileged -v `pwd`:/slides -v ~:/home/user astefanutti/decktape \
-            --pause=${pause} --size=1024x768 \
-            --chrome-arg=--allow-file-access-from-files remark \
-            ${file}/index.html ${file}/${file}.pdf
-        
-        #node_modules/.bin/decktape --pause=$pause --size=1024x768 \
-        #    --chrome-arg=--allow-file-access-from-files \
-        #    remark ${file}/index.html ${file}/${file}.pdf
+        node_modules/.bin/decktape --pause=$pause --size=1024x768 \
+            --chrome-arg=--allow-file-access-from-files \
+            remark ${file}/index.html ${file}/${file}.pdf
     fi
 done < list.txt
 
@@ -38,11 +32,12 @@ file=$(head -n 1 list.txt | cut -d ',' -f 2)
 Rscript -e "rmarkdown::render(\"${file}/index.Rmd\")"
 
 echo 'decktape: start printing PDF'
-docker run --rm -it --privileged -v `pwd`:/slides -v ~:/home/user astefanutti/decktape \
-    --pause=${pause} --size=1024x768 \
+node_modules/.bin/decktape --pause=$pause --size=1024x768 \
     --chrome-arg=--allow-file-access-from-files remark \
     ${file}/index.html ${file}/${file}.pdf
-#node_modules/.bin/decktape --pause=$pause --size=1024x768 \
+
+#docker run --rm -it --privileged -v `pwd`:/slides -v ~:/home/user astefanutti/decktape \
+#    --pause=${pause} --size=1024x768 \
 #    --chrome-arg=--allow-file-access-from-files remark \
 #    ${file}/index.html ${file}/${file}.pdf
 
