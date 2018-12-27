@@ -17,7 +17,7 @@ while read p; do
     else
         Rscript -e "rmarkdown::render(\"${file}/index.Rmd\")"
         
-        docker run --rm -t -v `pwd`:/slides -v ~:/home/user astefanutti/decktape \
+        sudo docker run --rm -t -v `pwd`:/slides -v ~:/home/user astefanutti/decktape \
             --pause=${pause} --size=1024x768 \
             --chrome-arg=--allow-file-access-from-files remark \
             ${file}/index.html ${file}/${file}.pdf
@@ -38,7 +38,7 @@ file=$(head -n 1 list.txt | cut -d ',' -f 2)
 Rscript -e "rmarkdown::render(\"${file}/index.Rmd\")"
 
 echo 'decktape: start printing PDF'
-docker run --rm -t -v `pwd`:/slides -v ~:/home/user astefanutti/decktape \
+sudo docker run --rm -t -v `pwd`:/slides -v ~:/home/user astefanutti/decktape \
     --pause=${pause} --size=1024x768 \
     --chrome-arg=--allow-file-access-from-files remark \
     ${file}/index.html ${file}/${file}.pdf
