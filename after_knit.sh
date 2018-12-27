@@ -12,7 +12,7 @@ done
 # Create Slide Archive
 [[ -d archive ]] || mkdir archive
 cp -r docs/* archive
-rm -r archive/img #archive/*/*.pdf
+rm -r archive/img archive/archive #archive/*/*.pdf
 tar -zcvf archive.tar.gz archive
 rm -r archive
 mv archive.tar.gz docs/
