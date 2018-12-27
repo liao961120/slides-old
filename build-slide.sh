@@ -14,12 +14,12 @@ while read p; do
   
   file=$(echo "$p" | cut -d ',' -f 2)
   
-  exist='m'
+  exist=''
   # If web page available
-#  if [[ -e archive/${file}/${file}.pdf ]]; then
-#    exist='true'
-#    [[ -d ${file} ]] && cp -r archive/${file}/* ${file}/
-#  fi
+  if [[ -e archive/${file}/${file}.pdf ]]; then
+    exist='true'
+    [[ -d ${file} ]] && cp -r archive/${file}/* ${file}/
+  fi
   #curl -L -s --head https://github.com/liao961120/slides/blob/gh-pages/${file}/${file}.pdf | head -n 1 | grep "HTTP/1.[01] [23].." > foo.txt
   #exist=$(head -n 1 foo.txt)
 
