@@ -55,4 +55,5 @@ Rscript -e "rmarkdown::render(\"${file}/index.Rmd\")"
 node_modules/.bin/decktape --pause=$pause --size=1024x768 --chrome-arg=--allow-file-access-from-files remark ${file}/index.html ${file}/${file}.pdf
 
 # Remove archive
-rm -r archive archive.tar.gz
+rm -r archive/
+rm -r archive.tar.gz
