@@ -1,0 +1,571 @@
+---
+title: "Xaringan Xaringan Xaringan"
+subtitle: "Chocolate Theme"
+author: "Yongfu Liao"
+date: "`r format(Sys.Date(), '%B %e, %Y')`"
+output:
+  xaringan::moon_reader:
+    css: [default, chocolate, chocolate-fonts]
+    lib_dir: libs
+    nature:
+      beforeInit: "macros.js"
+      highlightStyle: github
+      highlightLines: true
+      countIncrementalSlides: false
+    yolo:
+      img: "../img/emo/boredom-small.png"
+      times: 1
+    seal: false
+---
+
+```{r setup, include=FALSE}
+options(htmltools.dir.version = FALSE)
+```
+
+class: title-slide
+
+.bg-text[
+# Xaringan Xaringan Xaringan
+### Chocolate Theme
+
+<hr />
+
+`r format(Sys.Date(), '%B %e, %Y')`  
+Yongfu Liao
+]
+
+---
+
+# yaml
+
+```{r echo=FALSE}
+date <- "`r format(Sys.Date(), '%B %e, %Y')`"
+```
+
+
+```yaml
+---
+title: "Xaringan Xaringan Xaringan"
+subtitle: "Chocolate Theme"
+author: "Yongfu Liao"
+date: "`r date`"
+output:
+  xaringan::moon_reader:
+    css: [default, chocolate, chocolate-fonts]
+    lib_dir: libs
+    nature:
+      beforeInit: "macros.js"
+      highlightStyle: github
+      highlightLines: true
+      countIncrementalSlides: false
+    yolo:
+      img: "../img/emo/boredom-small.png"
+      times: 1
+    seal: false
+---
+```
+
+See the help page `?xaringan::moon_reader` for all possible options that you can use.
+
+---
+
+# Title Page
+
+Set `seal: false` and write the title page in R Markdown:
+
+```markdown
+class: title-slide
+
+.bg-text[
+# Xaringan Xaringan Xaringan
+### Chocolate Theme
+
+<hr />
+
+`r date`  
+Yongfu Liao
+]
+
+---
+```
+
+--
+
+The background image is set in [`chocolate`](https://github.com/yihui/xaringan/blob/master/inst/rmarkdown/templates/xaringan/resources/chocolate.css) and can be overwritten with `background-image: url(path)` in the title page.
+
+???
+
+presenter's note presenter's note presenter's note presenter's note presenter's note presenter's note presenter's note presenter's note presenter's note 
+
+---
+
+
+class: top, right, inverse
+background-image: url(https://farm2.staticflickr.com/1223/943655732_4a8444e17b_b.jpg)
+background-color: black
+
+# Image from flickr
+
+???
+
+Presenter's note presenter's note presenter's note presenter's note presenter's note presenter's note presenter's note presenter's note presenter's note Presenter's note presenter's note presenter's note presenter's note presenter's note presenter's note presenter's note presenter's note presenter's note
+
+```
+class: bottom, right, inverse
+```
+
+---
+
+class: inverse, center, middle, title-slide
+
+# Get Started
+
+---
+
+## Incremental portion
+
+- Incremental portions is seperated by `--`
+
+--
+
+- Footnotes
+    - `<sup>tag</sup>`: <sup>1</sup>
+    - `.footnote[]`
+
+
+.footnote[
+[1] 中文註腳。
+]
+
+---
+background-position: contain
+background-image: linear-gradient(to bottom, rgba(255,255,255,0.4) 0%, rgba(255,255,255,0.4) 100%), url("../img/bg/peace-sea.jpg")
+
+# Content Class
+
+
+
+--
+
+- Global class for all elements in a slide (Not affecting backgroud image)
+    - Set on top of the slide with: `class: right, inverse`
+        - Horizontal alignment: `left`, `center`, `right`
+        - Vertical alignment: `top`, `middle`, `bottom`
+        - Inverse color: `inverse`
+
+--
+
+- Background images
+    - `background-image: url("../img/pictures/road-straight.jpg")`
+    - `background-position: center`
+    - `background-size: contain`, `50% 50%`, `cover`
+
+--
+
+- Advanced Background (Backgroud with Mask)
+    - `background-image: linear-gradient(to bottom, rgba(255,255,255,0.4) 0%, rgba(255,255,255,0.4) 100%), url("../img/bg/peace-sea.jpg")`
+    - See the Next Page
+
+--
+
+<br>
+.right[
+.small[See [R Markdown Definite Guide](https://bookdown.org/yihui/rmarkdown/xaringan-format.html#content-classes) for datails.]
+]
+
+---
+class: bottom, inverse
+background-position: contain
+background-image: url("../img/bg/peace-sea.jpg")
+
+### Background Image without Mask
+
+---
+# Two Column Layout
+
+
+.pull-left[
+
+## R
+
+### Properties
+
+## Python
+
+]
+
+--
+
+.pull-right[
+![:class shadow](https://liao961120.github.io/linguisticsdown/man/figs/features.gif)
+]
+
+---
+
+## Sidebar Layout
+
+--
+
+.left-column[
+### Left is Small
+]
+
+.right-column[
+Some text in Left is small. Some text in Left is small. Some text in Left is small. Some text in Left is small. Some text in Left is small. Some text in Left is small. 
+]
+
+---
+
+## Sidebar Layout
+
+.left-column[
+### Left is small
+### Right is large
+]
+
+.right-column[
+
+- Incremental effect with sidebar layout  
+
+- Incremental effect by using different pages
+
+- Left column is 20%
+
+- Right column is 75%
+]
+
+---
+## Sidebar Layout
+
+.left-column[
+### Left is small
+### Right is large
+### Source code
+]
+
+.right-column[
+
+#### Code (previous page)
+```markdown
+## Sidebar Layout
+
+.left-column[
+### Left is small
+### Right is large
+]
+
+.right-column[
+
+- Incremental effect with sidebar layout  
+
+- Incremental effect by using different pages
+
+- Left column is 20%
+
+- Right column is 75%
+]
+```
+
+]
+
+
+---
+background-image: url("../img/emo/great.jpg")
+background-size: 100px
+background-position: 90% 8%
+
+# Bg Image as Icon
+
+    background-image: url("../img/emo/great.jpg")
+    background-size: 100px
+    background-position: 90% 8%
+
+
+---
+class: inverse
+
+# Shortcuts
+
+.large[
+
+- `h`: Help
+
+- `c`: Copy to new window
+
+- `p`: Presenter mode
+
+- `m`: Mirror
+
+- `f`: Full screen
+
+- `b`: Black out
+
+- `t`: Start/stop timer
+
+- `num + enter`: Nav to page `num`
+]
+
+--
+
+Hit `p` to see the presenter's notes of this page.
+
+???
+
+### Markdown Formatted Notes
+
+1. Item 1 blah
+1. yeee
+1. xaringan xaringan xaringan xaringan 
+
+---
+
+# remark.js
+
+You can see an introduction of remark.js from [its homepage](https://remarkjs.com). You should read the [remark.js Wiki](https://github.com/gnab/remark/wiki) at least once to know how to
+
+- create a new slide (Markdown syntax<sup>*</sup> and slide properties);
+
+- format a slide (e.g. text alignment);
+
+- configure the slideshow;
+
+- and use the presentation (keyboard shortcuts).
+
+It is important to be familiar with remark.js before you can understand the options in **xaringan**.
+
+.footnote[[*] It is different with Pandoc's Markdown! It is limited but should be enough for presentation purposes. Come on... You do not need a slide for the Table of Contents! Well, the Markdown support in remark.js [may be improved](https://github.com/gnab/remark/issues/142) in the future.]
+
+---
+background-image: url("../img/pictures/cabin.jpg")
+background-size: cover
+
+---
+
+# R Code
+
+```{r comment='#'}
+# a boring regression
+fit = lm(dist ~ 1 + speed, data = cars)
+coef(summary(fit))
+dojutsu = c('地爆天星', '天照', '加具土命', '神威', '須佐能乎', '無限月読')
+grep('天', dojutsu, value = TRUE)
+```
+
+---
+
+# R Plots
+
+```{r cars, fig.height=4, dev='svg'}
+par(mar = c(4, 4, 1, .1))
+plot(cars, pch = 19, col = 'darkgray', las = 1)
+abline(fit, lwd = 2)
+```
+
+---
+
+# Tables
+
+If you want to generate a table, make sure it is **in the HTML format**
+
+```{r}
+knitr::kable(head(iris), format = 'html')
+```
+
+---
+
+```{r out.width='100%', fig.height=6, eval=require('leaflet')}
+library(leaflet)
+leaflet() %>% addTiles() %>% setView(121.5370, 25.0170, zoom = 15)
+```
+
+---
+
+```{r eval=require('DT'), tidy=FALSE}
+DT::datatable(
+  head(iris, 10),
+  fillContainer = FALSE, options = list(pageLength = 8)
+)
+```
+
+---
+
+# Some Tips
+
+- A countdown timer can be added to **every page of the slides** using the `countdown` option under `nature`, e.g. if you want to spend one minute on every page when you give the talk, you can set:
+
+```yaml
+output:
+  xaringan::moon_reader:
+    nature:
+      countdown: 60000
+```
+
+Then you will see a timer counting down from `01:00`, to `00:59`, `00:58`, ... When the time is out, the timer will continue but the time turns red.
+    
+---
+
+# Some Tips
+
+- There are several ways to build incremental slides. See [this presentation](https://slides.yihui.name/xaringan/incremental.html) for examples.
+
+---
+
+# Highlight Code
+
+
+.pull-left[
+An example using a leading `*`:
+
+```c
+if (a == b) {
+** a + b
+}
+```
+
+Output:
+```c
+if (a == b) {
+* a + b
+}
+```
+
+- This is used for **plain-text code chunks**.
+]
+
+.pull-right[
+An example using an ending `#<<`:
+
+```r
+if (TRUE) {
+  message("Important!") #<<
+}
+```
+
+Output:
+```{r tidy=FALSE, eval=FALSE}
+if (TRUE) {
+  message("Important!") #<<
+}
+```
+
+- This is used for **executable code chunks**.
+]
+
+---
+
+# Macros (yaml)
+
+- remark.js [allows users to define custom macros](https://github.com/yihui/xaringan/issues/80) (JS functions) that can be applied to Markdown text using the syntax
+    - `![:macroName arg1, arg2, ...]`, or 
+    
+    - `![:macroName arg1, arg2, ...](this)`
+
+- Define macros in `macros.js` and include it in yaml with `beforeInit` under the option `nature`:
+
+    ```yaml
+    output:
+      xaringan::moon_reader:
+        nature:
+          beforeInit: "macros.js"
+    ```
+
+---
+
+# Macros (create)
+
+You can define a macro named `scale` in `macros.js`: 
+
+```js
+remark.macros.scale = function (val) {
+  var url = this;
+  return '<img src="' + url + '" style="width: ' + val + '" />';
+};
+```
+
+--
+
+Then the Markdown text
+
+```markdown
+![:scale 50%](image.jpg)
+```
+
+--
+
+will be translated to
+
+```html
+<img src="image.jpg" style="width: 50%" />
+```
+    
+---
+
+
+```markdown
+Some text ![:scale 70px](../img/emo/bye.png)
+```
+
+Some text ![:scale 70px](../img/emo/bye.png)
+
+--
+
+```markdown
+.center[
+![:scale 150px](../img/emo/bye.png)
+]
+```
+
+.center[![:scale 150px](../img/emo/indian.png)]
+
+---
+
+# Macros (usage)
+
+```markdown
+![:gen 90%, shadow](../img/pictures/road-red.jpg)
+```
+
+![:gen 90%, shadow](../img/pictures/road-red.jpg)
+---
+
+.pull-left[
+![:gen 150px, shadow](https://media.giphy.com/media/26Do6la9cIiHvIwMM/giphy.gif)
+
+![:gen 150px, shadow](https://media.giphy.com/media/84g6u2O3epwKA/giphy.gif)
+
+![:gen 150px, shadow](https://media.giphy.com/media/rSZdnoUEEkROM/giphy.gif)
+
+![:gen 150px, shadow](https://media.giphy.com/media/K6sJ65pUgAn8k/giphy.gif)
+
+![:gen 150px, shadow](https://media.giphy.com/media/lAR4Dpck3ntS0/giphy.gif)
+]
+
+.pull-right[
+![:gen 150px, shadow](https://media.giphy.com/media/qSNtgm0PgG6vm/giphy.gif)
+
+![:gen 150px, shadow](https://media.giphy.com/media/eAjhx94F7290s/giphy.gif)
+
+![:gen 150px, shadow](https://media.giphy.com/media/JIX9t2j0ZTN9S/giphy.gif)
+
+![:gen 150px, shadow](https://media.giphy.com/media/Jk4ZT6R0OEUoM/giphy.gif)
+]
+
+---
+
+## MathJax
+
+```latex
+\color{blue}{ \frac{a}{\color{red} b} \sqrt{\color{black} x} }
+```
+
+$\color{blue} {\frac{a}{\color{red} b} \sqrt{\color{black} x}}$
+
+---
+
+## Thanks For Reading
+
+[GitHub Source](https://github.com/liao961120/slides/tree/master/xaringan)
+
+--
+
+.middle[.center[![:scale 400px](../img/emo/bye.png)]]
