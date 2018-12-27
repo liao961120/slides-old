@@ -15,7 +15,6 @@ cp -r docs/* archive
 rm -r archive/img archive/archive #archive/*/*.pdf
 tar -zcvf archive.tar.gz archive
 mv archive.tar.gz docs/
-#tar -xvzf archive.tar.gz
 
 # Clean up
 [[ -d archive ]] && rm -r archive
