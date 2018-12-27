@@ -8,6 +8,8 @@ cache:
 dist: trusty
 pandoc_version: 1.19.2.1
 
+services:
+  - docker
 
 before_install:
   - sudo apt-get update
@@ -23,6 +25,7 @@ before_install:
   - sudo cp ./NotoSansCJKtc.otf /usr/share/fonts/truetype/noto      # install Chinese font NotoSansCJK TC
   - sudo chmod 755 /usr/share/fonts/truetype/noto/NotoSansCJKtc.otf # install Chinese font NotoSansCJK TC
   - fc-cache                                                        # install Chinese font NotoSansCJK TC
+  - docker pull astefanutti/decktape
 
 
 script:
