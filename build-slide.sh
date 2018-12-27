@@ -3,8 +3,8 @@
 pause=${1}
 
 # Download archive.tar.gz
-#wget https://raw.githubusercontent.com/liao961120/slides/gh-pages/archive.tar.gz
-#tar -xvzf archive.tar.gz
+wget https://raw.githubusercontent.com/liao961120/slides/gh-pages/archive.tar.gz
+tar -xvzf archive.tar.gz
 
 # Loop over every file in list.txt
 while read p; do
@@ -14,7 +14,7 @@ while read p; do
   
   file=$(echo "$p" | cut -d ',' -f 2)
   
-  exist=''
+  exist='m'
   # If web page available
 #  if [[ -e archive/${file}/${file}.pdf ]]; then
 #    exist='true'
@@ -55,4 +55,4 @@ Rscript -e "rmarkdown::render(\"${file}/index.Rmd\")"
 node_modules/.bin/decktape --pause=$pause --size=1024x768 --chrome-arg=--allow-file-access-from-files remark ${file}/index.html ${file}/${file}.pdf
 
 # Remove archive
-#rm -r archive archive.tar.gz
+rm -r archive archive.tar.gz
