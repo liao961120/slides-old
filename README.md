@@ -10,7 +10,7 @@ I also set up [decktape](https://github.com/astefanutti/decktape) to print HTML 
 
 - [.travis.yml](https://github.com/liao961120/slides/blob/master/.travis.yml)
 - [list.txt](https://github.com/liao961120/slides/blob/master/list.txt): Slide directory names and date
-- [build-slide.sh](https://github.com/liao961120/slides/blob/master/build-slide.txt): Build and print new slide; download previously rendered slides
+- [build-slide.sh](https://github.com/liao961120/slides/blob/master/build-slide.sh): Build and print new slide; download previously rendered slides
 - [after-knit.sh](https://github.com/liao961120/slides/blob/master/after-knit.sh): Write [web page](https://liao961120.github.io/slides) to link to slides
 
 ## Steps to Update Slides
