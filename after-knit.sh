@@ -35,9 +35,7 @@ cat >> docs/index.md << _EOF_
 code { 
   font-stretch: condensed;
   padding-left: 0px;
-  font-size:0.88em; 
   background-color: rgba(51, 51, 51, 0);
-  font-style: oblique;
   }
 </style>
 
