@@ -48,9 +48,9 @@ while read p; do
     url=$(echo "$p" | cut -d ';' -f 3)
   
     if [[ ${url} == 'local' ]]; then
-        printf "[$date]{.mono} [$file](${file}){:target='_blank' .tab0} ([PDF](${file}/${file}.pdf){:target='_blank'})\n\n" >> docs/index.md
+        printf "[$date]{:.mono} [$file](${file}){:target='_blank' .tab0} ([PDF](${file}/${file}.pdf){:target='_blank'})\n\n" >> docs/index.md
     else
-        printf "[$date]{.mono} [$file](${url}){:target='_blank' .tab0}\n\n" >> docs/index.md
+        printf "[$date]{:.mono} [$file](${url}){:target='_blank' .tab0}\n\n" >> docs/index.md
     fi
 done < list.txt
 
