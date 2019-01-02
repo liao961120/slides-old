@@ -29,6 +29,12 @@ touch docs/index.md
 cat >> docs/index.md << _EOF_
 [![Build Status](https://travis-ci.org/liao961120/slides.svg?branch=master)](https://travis-ci.org/liao961120/slides)
 
+<style>
+.tab0 { padding-left: 1.1em; }
+</style>
+
+
+
 # List of Slides
 <br><br>
 
@@ -42,9 +48,9 @@ while read p; do
     url=$(echo "$p" | cut -d ',' -f 3)
   
     if [[ ${url} == 'local' ]]; then
-        printf "$date &#09; [$file](${file}){:target='_blank'} ([PDF](${file}/${file}.pdf){:target='_blank'})\n\n" >> docs/index.md
+        printf "$date &#09; [$file](${file}){:target='_blank' .tab0} ([PDF](${file}/${file}.pdf){:target='_blank'})\n\n" >> docs/index.md
     else
-        printf "$date &#09; [$file](${url}){:target='_blank'}\n\n" >> docs/index.md
+        printf "$date &#09; [$file](${url}){:target='_blank' .tab0}\n\n" >> docs/index.md
     fi
 done < list.txt
 
