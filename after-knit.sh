@@ -31,8 +31,8 @@ cat >> docs/index.md << _EOF_
 
 <style>
 .tab0 { padding-left: 1.1em; }
+p { font-family: monospace; }
 </style>
-
 
 
 # List of Slides
