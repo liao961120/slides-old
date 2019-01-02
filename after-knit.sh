@@ -32,6 +32,7 @@ cat >> docs/index.md << _EOF_
 <style>
 .tab0 { padding-left: 1.1em; }
 .mono { font-family: monospace; }
+code { font-size:0.9em; }
 </style>
 
 
@@ -48,9 +49,9 @@ while read p; do
     url=$(echo "$p" | cut -d ';' -f 3)
   
     if [[ ${url} == 'local' ]]; then
-        printf "[$date]{:.mono} [$file](${file}){:target='_blank' .tab0} ([PDF](${file}/${file}.pdf){:target='_blank'})\n\n" >> docs/index.md
+        printf "<code>$date</code> [$file](${file}){:target='_blank' .tab0} ([PDF](${file}/${file}.pdf){:target='_blank'})\n\n" >> docs/index.md
     else
-        printf "[$date]{:.mono} [$file](${url}){:target='_blank' .tab0}\n\n" >> docs/index.md
+        printf "<code>$date</code> [$file](${url}){:target='_blank' .tab0}\n\n" >> docs/index.md
     fi
 done < list.txt
 
