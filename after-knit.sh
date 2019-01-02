@@ -36,6 +36,7 @@ code {
   font-stretch: condensed;
   padding-left: 0px;
   background-color: rgba(51, 51, 51, 0);
+  border: 0px;
   }
 </style>
 
