@@ -32,7 +32,13 @@ cat >> docs/index.md << _EOF_
 <style>
 .tab0 { padding-left: 1.1em; }
 .mono { font-family: monospace; }
-code { font-size:0.9em; }
+code { 
+  font-stretch: condensed;
+  padding-left: 0px;
+  font-size:0.88em; 
+  background-color: rgba(51, 51, 51, 0);
+  font-style: oblique;
+  }
 </style>
 
 
