@@ -9,10 +9,10 @@ tar -xvzf archive.tar.gz
 python -m SimpleHTTPServer &
 # Loop over every file in list.txt
 while read p; do
-    url=$(echo "$p" | cut -d ',' -f 3)
+    url=$(echo "$p" | cut -d ';' -f 3)
     [[ ${url} != 'local' ]] && continue # Skip google slide
   
-    file=$(echo "$p" | cut -d ',' -f 2)  
+    file=$(echo "$p" | cut -d ';' -f 2)  
     # If web page available
     if [[ -e archive/${file}/${file}.pdf ]]; then
         [[ -d ${file} ]] && cp -r archive/${file}/* ${file}/
@@ -27,10 +27,10 @@ done < list.txt
 
 # Always build the newest slide (first entry in list.txt
 ## Exit if the newest slide is google slide
-url=$(head -n 1 list.txt | cut -d ',' -f 3)
+url=$(head -n 1 list.txt | cut -d ';' -f 3)
 [[ ${url} != 'local' ]] && exit 0
 
-file=$(head -n 1 list.txt | cut -d ',' -f 2)
+file=$(head -n 1 list.txt | cut -d ';' -f 2)
 Rscript -e "rmarkdown::render(\"${file}/index.Rmd\")"
 
 echo 'decktape: start printing PDF'

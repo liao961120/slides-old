@@ -31,7 +31,7 @@ cat >> docs/index.md << _EOF_
 
 <style>
 .tab0 { padding-left: 1.1em; }
-p { font-family: monospace; }
+.mono { font-family: monospace; }
 </style>
 
 
@@ -43,14 +43,14 @@ _EOF_
 
 # Write slide links
 while read p; do
-    date=$(echo "$p" | cut -d ',' -f 1)
-    file=$(echo "$p" | cut -d ',' -f 2)
-    url=$(echo "$p" | cut -d ',' -f 3)
+    date=$(echo "$p" | cut -d ';' -f 1)
+    file=$(echo "$p" | cut -d ';' -f 2)
+    url=$(echo "$p" | cut -d ';' -f 3)
   
     if [[ ${url} == 'local' ]]; then
-        printf "$date &#09; [$file](${file}){:target='_blank' .tab0} ([PDF](${file}/${file}.pdf){:target='_blank'})\n\n" >> docs/index.md
+        printf "[$date]{.mono} [$file](${file}){:target='_blank' .tab0} ([PDF](${file}/${file}.pdf){:target='_blank'})\n\n" >> docs/index.md
     else
-        printf "$date &#09; [$file](${url}){:target='_blank' .tab0}\n\n" >> docs/index.md
+        printf "[$date]{.mono} [$file](${url}){:target='_blank' .tab0}\n\n" >> docs/index.md
     fi
 done < list.txt
 
