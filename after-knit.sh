@@ -32,7 +32,7 @@ cat >> docs/index.md << _EOF_
 <style>
 .tab0 { padding-left: 1.1em; }
 .mono { font-family: monospace; }
-code.ori { 
+code { 
   font-stretch: condensed;
   padding-left: 0px;
   background-color: rgba(51, 51, 51, 0);
@@ -53,9 +53,9 @@ while read p; do
     url=$(echo "$p" | cut -d ';' -f 3)
   
     if [[ ${url} == 'local' ]]; then
-        printf "<code class='ori'>$date</code> [$file](${file}){:.tab0} ([PDF](${file}/${file}.pdf))\n\n" >> docs/index.md
+        printf "<code>$date</code> [$file](${file}){:target='_blank' .tab0} ([PDF](${file}/${file}.pdf){:target='_blank'})\n\n" >> docs/index.md
     else
-        printf "<code class='ori'>$date</code> [$file](${url}){:.tab0}\n\n" >> docs/index.md
+        printf "<code>$date</code> [$file](${url}){:target='_blank' .tab0}\n\n" >> docs/index.md
     fi
 done < list.txt
 
