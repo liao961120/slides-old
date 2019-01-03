@@ -41,7 +41,7 @@ code {
 </style>
 
 
-# List of Slides
+# Slides
 <br><br>
 
 _EOF_
@@ -62,4 +62,5 @@ done < list.txt
 
 
 # Set page theme
-printf 'theme: jekyll-theme-architect' > docs/_config.yml
+printf 'theme: jekyll-theme-tactile' > docs/_config.yml
+#printf 'theme: jekyll-theme-architect' > docs/_config.yml
