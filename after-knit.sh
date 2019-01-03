@@ -41,9 +41,6 @@ code {
 </style>
 
 
-# Slides
-<br><br>
-
 _EOF_
 
 
@@ -62,5 +59,14 @@ done < list.txt
 
 
 # Set page theme
-printf 'theme: jekyll-theme-tactile' > docs/_config.yml
 #printf 'theme: jekyll-theme-architect' > docs/_config.yml
+
+cat > docs/_config.yml << _EOF_
+
+title: Slides
+description: Build, print, and deploy xaringan slides automatically
+show_downloads: false
+google_analytics: UA-129572979-1
+theme: jekyll-theme-tactile
+
+_EOF_
