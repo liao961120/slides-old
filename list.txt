@@ -1,3 +1,4 @@
+Feb 21, 2019;lope-collabin;local
 Dec 25, 2018;Social Psy Report;http://bit.ly/socialpsy181225
 Oct 04, 2018;xaringan;local
 Sep 28, 2018;pttR-intro;local

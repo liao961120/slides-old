@@ -1,0 +1,134 @@
+---
+title: "協作閣 for LOPE Lab"
+author: "Yongfu Liao"
+date: "`r format(Sys.Date(), '%B %e, %Y')`"
+output:
+  xaringan::moon_reader:
+    includes:
+      in_header: target.html
+    #css: [default, chocolate, chocolate-fonts] 
+    lib_dir: libs
+    nature:
+      #beforeInit: "macros.js"
+      highlightStyle: github
+      highlightLines: true
+      countIncrementalSlides: false
+    #seal: false
+---
+
+## [協作閣](https://collabin.netlify.com)是啥？
+
+
+- A Blog for Anybody
+
+- 格式：
+    - R Markdown (bookdown)
+
+???
+#### 多人協作的部落格(閣)
+協作閣是我在寒假時，突發奇想下做出的一個部落格平台。基本上，這個部落格的目的是在促進臺灣的部落格寫作風氣。
+
+那它達成目的的方式，是透過降低經營部落格的門檻，讓任何人，特別是**沒有經營部落格**的人，能夠透過 Google 表單將單篇文章上傳到這個平台。
+
+那因為協作閣是架在 GitHub 上，所以未來如果想要自行經營部落格，協作閣的作者可以很輕鬆地把這裡的文章轉移到新的部落格。
+
+#### 格式
+那因為部落格的生成牽涉到文章撰寫的格式。協作閣為了統一格式問題，選擇使用 R Markdown，因為就我所知，R Markdown 是目前支援最多排版花樣的格式，然後它也能同時在文件中自動插入程式運算的結果。
+
+
+---
+
+## LOPE 文章撰寫
+
+- **R Markdown** 或 **Jupyter**
+
+
+- 如果沒有偏好，建議 **R Markdown**
+
+--
+    
+    - Why ?
+    
+        - 與協作閣契合
+        
+        - 排版功能較多 (e.g. figure caption, citation)
+        
+        - R Markdown 可以[**寫臺大論文**](https://liao961120.github.io/ntuthesis)
+
+
+
+---
+
+## LOPE 文章上傳
+
+
+.left-column[
+### R
+]
+
+.right-column[
+
+1. `.Rmd` + dependencies (e.g., figures, `.R`)
+
+1. 確認可 knit 成 HTML
+
+1. 壓縮：`.Rmd` + dependencies > `.zip`
+
+1. 上傳 `.zip`
+
+]
+
+.footnote[
+上傳: [表單](https://goo.gl/forms/t76C5JNDjMx8DxX42)
+]
+
+
+---
+
+## LOPE 文章上傳
+
+.left-column[
+### R
+### Python
+
+]
+
+.right-column[
+
+
+1. Jupyter notebook > `.html` > `.zip`
+
+1. 上傳 `.zip`
+
+]
+
+
+.footnote[
+上傳: [表單](https://goo.gl/forms/t76C5JNDjMx8DxX42)
+]
+
+
+
+---
+
+## LOPE 文章上傳
+
+.left-column[
+### R
+### Python
+### Others
+]
+
+.right-column[
+
+1. Something > `.html` > `.zip`
+
+1. 上傳 `.zip`
+
+]
+
+
+.footnote[
+上傳: [表單](https://goo.gl/forms/t76C5JNDjMx8DxX42)
+]
+
