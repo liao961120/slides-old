@@ -7,7 +7,8 @@ tar -xvzf archive.tar.gz
 
 
 python -m SimpleHTTPServer &
-# Loop over every file in list.txt
+# Loop over every file (except first) in list.txt
+tail -n +2 list.txt > list2
 while read p; do
     url=$(echo "$p" | cut -d ';' -f 3)
     [[ ${url} != 'local' ]] && continue # Skip google slide
@@ -22,7 +23,8 @@ while read p; do
             --chrome-arg=--allow-file-access-from-files \
             remark ${file}/index.html ${file}/${file}.pdf
     fi
-done < list.txt
+done < list2
+rm list2
 
 
 # Always build the newest slide (first entry in list.txt
