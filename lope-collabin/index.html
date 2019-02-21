@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>協作閣 for LOPE Lab</title>
+    <meta charset="utf-8">
+    <meta name="author" content=" Yongfu Liao" />
+    <link href="libs/remark-css-0.0.1/default.css" rel="stylesheet" />
+    <link href="libs/remark-css-0.0.1/default-fonts.css" rel="stylesheet" />
+    <script
+      src="https://code.jquery.com/jquery-3.3.1.min.js"
+      integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+      crossorigin="anonymous"></script>
+    <script>
+    $(document).ready(function() {
+      var links = document.getElementsByTagName('a');
+      for (var i = 0; i < links.length; i++) {
+        if (/^(https?:)?\/\//.test(links[i].getAttribute('href'))) {
+          links[i].target = '_blank';
+        }
+      }
+    })();
+    
+    </script>
+  </head>
+  <body>
+    <textarea id="source">
+class: center, middle, inverse, title-slide
+
+# 協作閣 for LOPE Lab
+### <br>Yongfu Liao
+### February 21, 2019<br><br><a href='https://bit.ly/LOPE0221' style='font-size:0.7em;'>bit.ly/LOPE0221</a>
+
+---
+
+
+## [協作閣](https://collabin.netlify.com)是啥？
+
+
+- A Blog for Anybody
+
+???
+#### A Blog for Anybody
+協作閣是我在寒假時，突發奇想下做出的一個部落格平台。基本上，這個部落格的目的是在促進臺灣的部落格寫作風氣。
+
+那它達成目的的方式，是透過降低經營部落格的門檻，讓任何人，特別是**沒有經營部落格**的人，能夠透過 Google 表單將單篇文章上傳到這個平台。
+
+那因為協作閣是架在 GitHub 上，所以未來如果想要自行經營部落格，協作閣的作者可以很輕鬆地把這裡的文章轉移到新的部落格。
+
+--
+
+- 文章撰寫格式：
+    - R Markdown (bookdown)
+
+???
+#### 文章撰寫
+那因為部落格的生成牽涉到文章撰寫的格式。協作閣為了統一格式問題，選擇使用 R Markdown，因為就我所知，R Markdown 是目前支援最多排版花樣的格式，然後它也能同時在文件中自動插入程式運算的結果。
+
+
+---
+
+## LOPE 文章撰寫
+
+- **R Markdown** 或 **Jupyter**
+
+
+- 如果用 R，建議 **R Markdown**
+
+???
+#### **R Markdown** 或 **Jupyter**
+那因為在座的多數應該比較習慣使用 Jupyter Notebook，  
+所以也可以直接使用 Jupyter 撰寫文章，再將輸出的 HTML 上傳到協作閣。
+
+--
+    
+    - Why ?
+    
+        - 與協作閣契合
+        
+        - 排版功能較多 (e.g. figure caption, citation)
+        
+        - R Markdown 可以[**寫臺大論文**](https://liao961120.github.io/ntuthesis)
+
+???
+#### Why?
+當然，如果你使用的是 R 語言，當然比較建議使用 R Markdown，  
+因為，
+
+1. 首先， R Markdown 是協作閣的預設格式，所以輸出會比較好看  
+1. 再者，R Markdown 的排版功能較多，比較適合寫作。例如，它能產生 figure caption 和自動生成引用文獻)
+1. 最後，如果你知道如何使用 R Markdown，那你也可以用 R Markdown 寫論文，因為已經有 R Markdown 的臺大論文模板了
+
+
+---
+
+## LOPE 文章上傳
+
+
+.left-column[
+### R
+]
+
+.right-column[
+
+1. `.Rmd` + dependencies (e.g., figures, `.R`)
+
+1. 確認可 knit 成 HTML
+
+1. 壓縮：`.Rmd` + dependencies &gt; `.zip`
+
+1. 上傳 `.zip`
+
+]
+
+.footnote[
+上傳: [表單](https://goo.gl/forms/t76C5JNDjMx8DxX42)
+]
+
+
+---
+
+## LOPE 文章上傳
+
+.left-column[
+### R
+### Python
+
+]
+
+.right-column[
+
+
+1. Jupyter notebook &gt; `.html` &gt; `.zip`
+
+1. 上傳 `.zip`
+
+]
+
+
+.footnote[
+上傳: [表單](https://goo.gl/forms/t76C5JNDjMx8DxX42)
+]
+
+
+
+---
+
+## LOPE 文章上傳
+
+.left-column[
+### R
+### Python
+### Others
+]
+
+.right-column[
+
+1. Something &gt; `.html` &gt; `.zip`
+
+1. 上傳 `.zip`
+
+]
+
+
+.footnote[
+上傳: [表單](https://goo.gl/forms/t76C5JNDjMx8DxX42)
+]
+    </textarea>
+<script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
+<script>var slideshow = remark.create({
+"highlightStyle": "github",
+"highlightLines": true,
+"countIncrementalSlides": false
+});
+if (window.HTMLWidgets) slideshow.on('afterShowSlide', function (slide) {
+  window.dispatchEvent(new Event('resize'));
+});
+(function() {
+  var d = document, s = d.createElement("style"), r = d.querySelector(".remark-slide-scaler");
+  if (!r) return;
+  s.type = "text/css"; s.innerHTML = "@page {size: " + r.style.width + " " + r.style.height +"; }";
+  d.head.appendChild(s);
+})();</script>
+
+<script>
+(function() {
+  var i, text, code, codes = document.getElementsByTagName('code');
+  for (i = 0; i < codes.length;) {
+    code = codes[i];
+    if (code.parentNode.tagName !== 'PRE' && code.childElementCount === 0) {
+      text = code.textContent;
+      if (/^\\\((.|\s)+\\\)$/.test(text) || /^\\\[(.|\s)+\\\]$/.test(text) ||
+          /^\$\$(.|\s)+\$\$$/.test(text) ||
+          /^\\begin\{([^}]+)\}(.|\s)+\\end\{[^}]+\}$/.test(text)) {
+        code.outerHTML = code.innerHTML;  // remove <code></code>
+        continue;
+      }
+    }
+    i++;
+  }
+})();
+</script>
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+(function () {
+  var script = document.createElement('script');
+  script.type = 'text/javascript';
+  script.src  = 'https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML';
+  if (location.protocol !== 'file:' && /^https?:/.test(script.src))
+    script.src  = script.src.replace(/^https?:/, '');
+  document.getElementsByTagName('head')[0].appendChild(script);
+})();
+</script>
+  </body>
+</html>
