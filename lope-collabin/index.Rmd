@@ -1,6 +1,6 @@
 ---
-title: "協作閣 for LOPE Lab"
-author: "<br>Yongfu Liao"
+title: "協作閣 for LOPE"
+author: "<br><br>"
 date: "`r format(Sys.Date(), '%B %e, %Y')`<br><br><a href='https://bit.ly/LOPE0221' style='font-size:0.7em;'>bit.ly/LOPE0221</a>"
 output:
   xaringan::moon_reader:
@@ -11,137 +11,120 @@ output:
       highlightStyle: github
       highlightLines: true
       countIncrementalSlides: false
+    css: [default, default-fonts, custom.css]
 ---
 
-## [協作閣](https://collabin.netlify.com)是啥？
+## 文章撰寫
 
-
-- A Blog for Anybody
-
-???
-#### A Blog for Anybody
-協作閣是我在寒假時，突發奇想下做出的一個部落格平台。基本上，這個部落格的目的是在促進臺灣的部落格寫作風氣。
-
-那它達成目的的方式，是透過降低經營部落格的門檻，讓任何人，特別是**沒有經營部落格**的人，能夠透過 Google 表單將單篇文章上傳到這個平台。
-
-那因為協作閣是架在 GitHub 上，所以未來如果想要自行經營部落格，協作閣的作者可以很輕鬆地把這裡的文章轉移到新的部落格。
-
---
-
-- 文章撰寫格式：
-    - R Markdown (bookdown)
-
-???
-#### 文章撰寫
-那因為部落格的生成牽涉到文章撰寫的格式。協作閣為了統一格式問題，選擇使用 R Markdown，因為就我所知，R Markdown 是目前支援最多排版花樣的格式，然後它也能同時在文件中自動插入程式運算的結果。
-
-
----
-
-## LOPE 文章撰寫
-
-- **R Markdown** 或 **Jupyter**
-
-
-- 如果用 R，建議 **R Markdown**
-
-???
-#### **R Markdown** 或 **Jupyter**
-那因為在座的多數應該比較習慣使用 Jupyter Notebook，  
-所以也可以直接使用 Jupyter 撰寫文章，再將輸出的 HTML 上傳到協作閣。
-
---
+- 格式：
+    - **Markdown** (`.md`)
+    - **R Markdown** (`.Rmd`)
+    - **Jupyter Notebook** (`.ipynb`)
     
-    - Why ?
+- **`.md`** 與 **`.Rmd`**：使用**.red[相對路徑 (relative path)]**
+
+      ````md
+      ![](path/to/img.png)                     <!--Correct-->
+      ![](https://example.com/img.png)         <!--Correct-->
+      ![](/this/is/absolute/path/on/collabin)  <!--WRONG !!!-->
+      ````
+      
+      ````r
+      source('./path/to/file.csv')               # Correct
+      source('path/to/file.csv')                 # Correct
+      source('/Users/who/i/cant/find/file.csv')  # WRONG !!!
+      ````
+
+- **`.ipynb`**：請**.red[先跑出結果]** (i.e. `.ipynb` 內含圖片、程式執行結果)
+
+---
+
+## 文章上傳
+
+
+.left-column[
+### R Markdown
+]
+
+.right-column[
+
+1. 撰寫：**`index.Rmd`** + dependencies (figures, `.R`)
+
+1. 確認：使用[相對路徑](#2)、可 knit 成 HTML
+
+1. 壓縮：`index.Rmd` + dependencies → **`.zip`**
+
+1. [上傳](https://goo.gl/forms/t76C5JNDjMx8DxX42)：填寫文章資訊 (標題、文章標籤等)
+
+]
+
+---
+
+## 文章上傳
+
+.left-column[
+### R Markdown
+### Markdown
+]
+
+.right-column[
+
+1. 撰寫：**`index.md`** + dependencies (figures)
+
+1. 確認：使用[相對路徑](#2)
+
+1. 壓縮：`index.md` + dependencies → **`.zip`**
+
+1. [上傳](https://goo.gl/forms/t76C5JNDjMx8DxX42)：填寫文章資訊 (標題、文章標籤等)
+
+]
+
+---
+
+## 文章上傳
+
+.left-column[
+### R Markdown
+### Markdown
+### Jupyter nb
+]
+
+.right-column[
+
+1. 撰寫：**`index.ipynb`**
+
+1. 執行：先跑出結果 (`.ipynb` 內含圖片、程式執行結果)
+
+1. 壓縮：`index.ipynb` + dependencies<sup>\*</sup> → **`.zip`**
+
+1. [上傳](https://goo.gl/forms/t76C5JNDjMx8DxX42)：填寫文章資訊 (標題、文章標籤等)
+
+]
+
+.footnote[
+.smaller[
+[*]: 不附上 dependencies 仍可在網頁正常顯示 (因為已先執行過 `.ipynb`)。但若附上，檔案會保留在 Google Drive，省下自己保留或誤刪檔案的麻煩。
+]
+]
+
+---
+
+## 文章上傳
+
+.left-column[
+### R Markdown
+### Markdown
+### Jupyter nb
+### .smaller[網址]
+]
+
+.right-column[
+
+1. [上傳](https://goo.gl/forms/t76C5JNDjMx8DxX42)：
+
+    - **`url.txt`** (內含文章連結)
     
-        - 與協作閣契合
-        
-        - 排版功能較多 (e.g. figure caption, citation)
-        
-        - R Markdown 可以[**寫臺大論文**](https://liao961120.github.io/ntuthesis)
-
-???
-#### Why?
-當然，如果你使用的是 R 語言，當然比較建議使用 R Markdown，  
-因為，
-
-1. 首先， R Markdown 是協作閣的預設格式，所以輸出會比較好看  
-1. 再者，R Markdown 的排版功能較多，比較適合寫作。例如，它能產生 figure caption 和自動生成引用文獻)
-1. 最後，如果你知道如何使用 R Markdown，那你也可以用 R Markdown 寫論文，因為已經有 R Markdown 的臺大論文模板了
-
-
----
-
-## LOPE 文章上傳
-
-
-.left-column[
-### R
+    - 填寫文章資訊 (標題、文章標籤等)
+    
+- 有個人網站或部落格者，可使用這種方式新增文章。協作閣會放上 `url.txt` 內的文章連結。
 ]
-
-.right-column[
-
-1. `.Rmd` + dependencies (e.g., figures, `.R`)
-
-1. 確認可 knit 成 HTML
-
-1. 壓縮：`.Rmd` + dependencies > `.zip`
-
-1. 上傳 `.zip`
-
-]
-
-.footnote[
-上傳: [表單](https://goo.gl/forms/t76C5JNDjMx8DxX42)
-]
-
-
----
-
-## LOPE 文章上傳
-
-.left-column[
-### R
-### Python
-
-]
-
-.right-column[
-
-
-1. Jupyter notebook > `.html` > `.zip`
-
-1. 上傳 `.zip`
-
-]
-
-
-.footnote[
-上傳: [表單](https://goo.gl/forms/t76C5JNDjMx8DxX42)
-]
-
-
-
----
-
-## LOPE 文章上傳
-
-.left-column[
-### R
-### Python
-### Others
-]
-
-.right-column[
-
-1. Something > `.html` > `.zip`
-
-1. 上傳 `.zip`
-
-]
-
-
-.footnote[
-上傳: [表單](https://goo.gl/forms/t76C5JNDjMx8DxX42)
-]
-
