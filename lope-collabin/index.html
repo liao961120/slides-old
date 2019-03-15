@@ -29,10 +29,28 @@ class: center, middle, inverse, title-slide
 
 # 協作閣 for LOPE
 ### <br><br>
-### March 8, 2019<br><br><a href='https://bit.ly/LOPE0221' style='font-size:0.7em;'>bit.ly/LOPE0221</a>
+### March 15, 2019<br><br><a href='https://bit.ly/LOPE0221' style='font-size:0.7em;'>bit.ly/LOPE0221</a>
 
 ---
 
+
+## Outline
+
+.larger[
+- 文章撰寫
+
+- 文章上傳
+
+- 修改文章
+]
+
+---
+
+class: inverse, center, middle
+
+# 文章撰寫
+
+---
 
 ## 文章撰寫
 
@@ -57,8 +75,14 @@ class: center, middle, inverse, title-slide
 
 - **`.ipynb`**：請**.red[先跑出結果]** (i.e. `.ipynb` 內含圖片、程式執行結果)
 
+
 ---
 
+class: inverse, center, middle
+
+# 文章上傳
+
+---
 ## 文章上傳
 
 
@@ -70,7 +94,7 @@ class: center, middle, inverse, title-slide
 
 1. 撰寫：**`index.Rmd`** + dependencies (figures, `.R`)
 
-1. 確認：使用[相對路徑](#2)、可 knit 成 HTML
+1. 確認：使用[相對路徑](#4)、可 knit 成 HTML
 
 1. 壓縮：`index.Rmd` + dependencies → **`.zip`**
 
@@ -91,7 +115,7 @@ class: center, middle, inverse, title-slide
 
 1. 撰寫：**`index.md`** + dependencies (figures)
 
-1. 確認：使用[相對路徑](#2)
+1. 確認：使用[相對路徑](#4)
 
 1. 壓縮：`index.md` + dependencies → **`.zip`**
 
@@ -123,7 +147,7 @@ class: center, middle, inverse, title-slide
 
 .footnote[
 .smaller[
-[*]: 不附上 dependencies 仍可在網頁正常顯示 (因為已先執行過 `.ipynb`)。但若附上，檔案會保留在 Google Drive，省下自己保留或誤刪檔案的麻煩。
+\[\*\]: 不附上 dependencies 仍可在網頁正常顯示 (因為已先執行過 `.ipynb`)。
 ]
 ]
 
@@ -148,9 +172,53 @@ class: center, middle, inverse, title-slide
     
 - 有個人網站或部落格者，可使用這種方式新增文章。協作閣會放上 `url.txt` 內的文章連結。
 ]
+
+---
+
+class: inverse, center, middle
+
+
+# 修改文章
+
+---
+
+## 純文字修正
+
+.pull-left[
+
+1. 協作閣文章頁面點擊 &lt;img style="display:inline-block;height: 1em;margin-bottom:0" src="https://bit.ly/2RRirG7"&gt;
+
+1. 透過 GitHub 修改文章&lt;sup&gt;\*&lt;/sup&gt;
+
+1. 提出 Pull Request
+]
+
+.pull-right[![:gen 100%](edit-btn.png)]
+
+.footnote[
+.smaller[
+\[\*\]: 第一次編輯時，會跳出需要 Fork 的畫面，請按確定。編輯的過程可完全透過網頁進行，別擔心會因為按錯什麼而毀損檔案。如果完全不會使用 GitHub，可將修改過的檔案寄給我。
+]
+]
+
+---
+
+## 計算上的修正
+
+.larger[
+1. **`.Rmd`** ,  **`.md`**
+    
+  - 同上一張投影片 (透過 GitHub)
+
+1. **`.ipynb`**
+  
+  - 將新的 `.ipynb` 傳給我
+
+]
     </textarea>
 <style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
 <script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
+<script src="macros.js"></script>
 <script>var slideshow = remark.create({
 "highlightStyle": "github",
 "highlightLines": true,
