@@ -6,6 +6,7 @@ date: "`r format(Sys.Date(), '%B %e, %Y')`<br><br><a href='http://bit.ly/TravisR
 output:
   xaringan::moon_reader:
     nature:
+      ratio: "16:10"
       beforeInit: "addons/macros.js"
       highlightStyle: github
       highlightLines: true
@@ -72,7 +73,10 @@ Travis 则是为 GitHub repo 里的项目提供持续集成的一套服务。简
 
 <br>
 
-![](img/travis_auto.png)
+```{r out.width='85%'}
+include_graphics('img/travis_auto.png')
+```
+
 
 
 ???
@@ -88,7 +92,7 @@ class: inverse, center, middle
 
 ---
 
-```{r out.width='45%'}
+```{r out.width='38%'}
 include_graphics('img/hadley_travis.jpg')
 ```
 
@@ -212,11 +216,12 @@ branches:
 
 ```yml
 pandoc_version: 2.3.1
-latex: false
+latex: false      # tinytex is better
 before_install:   # 安装 R 包以外 dependencies
   - sudo apt-get update
-r_packages:         # 安装 CRAN 上的 R 包
+r_packages:       # 安装 CRAN 上的 R 包
   - bookdown
+  - tinytex
   - ggplot2
 r_github_packages:  # 安装 GitHub 上的 R 包
   - r-lib/pkgdown
@@ -297,12 +302,14 @@ cp -r _book/* docs
 
 ### Wrap up — .smaller[**`script`**]:
 
-* .smaller[.red[Current working directory on Travis]: GitHub repo]
+* .smaller[.red[Current working directory]: Cloned GitHub repo]
 
 1. 
 ```yml
 script:
-    - R -e 'bookdown::render_book("index.Rmd")'
+    - R -e 'tinytex::install_tinytex()'
+    - R -e 'bookdown::render_book("index.Rmd", output_format = "bookdown::gitbook")'
+    - R -e 'bookdown::render_book("index.Rmd", output_format = "bookdown::pdf_book")'
     - if [[ -d docs ]]; then rm -r docs; fi
     - mkdir docs
     - cp -r _book/* docs
@@ -443,7 +450,7 @@ deploy:
       branch: master
 ```
 
-```{r}
+```{r out.width='80%'}
 include_graphics('img/gh_token.gif')
 ```
 ]
