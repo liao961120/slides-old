@@ -1,8 +1,8 @@
 ---
 title: "R Markdown 与 Travis-CI 之结合应用"
-subtitle: "以自动布署 bookdown 为例"
+subtitle: "生成 bookdown 网页及 PDF"
 author: "Yongfu Liao<br><br>"
-date: "`r format(Sys.Date(), '%B %e, %Y')`<br><br><a href='https://bit.ly/LOPE0221' style='font-size:0.7em;'>bit.ly/LOPE0221</a>"
+date: "`r format(Sys.Date(), '%B %e, %Y')`<br><br><a href='http://bit.ly/TravisRmd' style='font-size:0.7em;'>bit.ly/TravisRmd</a>"
 output:
   xaringan::moon_reader:
     nature:
@@ -144,7 +144,7 @@ Travis 要能在 GitHub Repo 中侦测到必要的文件，它才能正确的运
 ## .smaller[**`.travis.yml`**]
 
 .left-column[
-### 内容 <a href='' style='font-size: 0.35em;'> GitHub</a>
+### 内容 <a href='https://github.com/liao961120/bookdown-crc-travis/blob/master/.travis.yml' style='font-size: 0.35em;'> GitHub</a>
 ]
 
 .right-column[
@@ -212,10 +212,9 @@ branches:
 
 ```yml
 pandoc_version: 2.3.1
-latex: true
+latex: false
 before_install:   # 安装 R 包以外 dependencies
   - sudo apt-get update
-  - tlmgr install index  # 安装 latex 包
 r_packages:         # 安装 CRAN 上的 R 包
   - bookdown
   - ggplot2
@@ -529,7 +528,13 @@ deploy:
 ## `r asis_output(deploy)`
 
 .right-column[
-push commit to GitHub or Trigger build on Travis ➜  
-wait for build ➜ Web site at
+
+- Push to GitHub ➜ Travis build auto-triggered  
+➜ build success ➜ Web site served at
 [`<user>`.github.io/`<repo>`](https://liao961120.github.io/bookdown-crc-travis)
+
+- 亦可手动直接在 Travis 网页上 trigger build:
+
+    [travis-ci.org/`<user>`/`<repo>`](https://travis-ci.org/liao961120/bookdown-crc-travis) ➜ More options ➜ Trigger build
 ]
+
