@@ -10,7 +10,7 @@ writeLines(simp, 'index_simp.Rmd')
 ## Copy to slide folder
 
 source_files <- list.files(full.names = TRUE)
-trad_source_idx <- which(grepl('(Rmd)|(html)|(_files)$', source_files))
+trad_source_idx <- which(grepl('(Rmd)|(html)|(_files)|(md)$', source_files))
 source_files <- source_files[-trad_source_idx]
 
 file.copy(from = source_files, to = '~/slides/Rconf-r-travis', 
