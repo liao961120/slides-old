@@ -1,6 +1,6 @@
 [![Build Status](https://travis-ci.org/liao961120/slides.svg?branch=master)](https://travis-ci.org/liao961120/slides)
 
-This repo is dormant now. It is a cool idea to build & print slides on Travis, but besides this, there is no other utilities. I now manage my slides at https://github.com/liao961120/slides.
+This repo is dormant now. It is a cool idea to build & print slides on Travis, but besides this, there are no other utilities. I now manage my slides at https://github.com/liao961120/slides.
 
 
 # Repo for Slides
