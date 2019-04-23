@@ -1,8 +1,11 @@
 [![Build Status](https://travis-ci.org/liao961120/slides.svg?branch=master)](https://travis-ci.org/liao961120/slides)
 
+This repo is dormant now. It is a cool idea to build & print slides on Travis, but besides this, there is no other utilities. I now manage my slides at https://github.com/liao961120/slides.
+
+
 # Repo for Slides
 
-This is where I put my HTML slides.  
+This was where I put my HTML slides.  
 The slides are generated and deployed to my web page by Travis-CI. 
 By setting up Travis-CI, I only have to update the source Rmd file and push the changes to GitHub without knitting them locally.
 
